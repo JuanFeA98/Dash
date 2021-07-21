@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #15224f;
+}
+
+header{
+    background: #021329;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+#logo{
+    width: 20px;
+    margin: 10px;
+}
+
+
+
