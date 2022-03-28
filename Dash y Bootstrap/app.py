@@ -25,21 +25,49 @@ app.layout = html.Div(children=[
     navbar(),
     html.H1(
         children='Hello Dash',
-        className='text-center p-3',
-        style={'color': colors['white']}
-        ),
+        style={
+            'color': colors['white'],
+            'textAlign': 'center',
+            'marginTop': '10px',
+            'marginBottom': '5px'
+        }
+    ),
     html.Div(
         children='Dash: A web application framework for Python.',
-        className='text-center p-1 text-light',
-        ),
-    # carousel(),
-    html.Div(
-        children=[card('Hello everybody')],
-        className='p-3',
+        style={
+            'textAlign': 'center',
+            'marginBottom': '20px'
+        }
     ),
-    dcc.Graph(
-        id='example-graph',
-        figure=figura()
+    # carousel(),
+    # html.Div(
+        # children=[card('Hello everybody')],
+        # className='p-3',
+    # ),
+    html.Div(
+        children=[
+            dcc.Graph(
+                id='example-graph',
+                figure=figura(),
+                style={
+                    'height': '400px',
+                    'width': '45%'
+                }            
+            ),
+            dcc.Graph(
+                id='example-graph2',
+                figure=figura(),
+                style={
+                    'height': '400px',
+                    'width': '45%'
+                }
+            ),
+        ],
+        style={
+            'width': '100%', 
+            'display':'flex',
+            'justify-content':'space-around',
+        },
     )
 ])
 
