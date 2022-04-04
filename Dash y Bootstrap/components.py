@@ -8,8 +8,8 @@ def navbar():
             children=[
                 dbc.DropdownMenu(
                     children=[
-                        dbc.DropdownMenuItem("How it works", href='#'),
-                        dbc.DropdownMenuItem("The statiscits", href='#'),
+                        dbc.DropdownMenuItem("Option 1", href='#'),
+                        dbc.DropdownMenuItem("Option 2", href='#'),
                     ],
                     nav=True,
                     in_navbar=True,

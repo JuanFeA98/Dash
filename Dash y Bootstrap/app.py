@@ -1,12 +1,13 @@
 #Librerias 
 from pydoc import classname
+from turtle import width
 from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 
 import dash_bootstrap_components as dbc
 
 from components import card, navbar, carousel
-from graphs import figura
+from graphs import scatter_plot_1, scatter_plot_2, bar_plot_1, bar_plot_2, bar_plot_3
 
 # Inicializamos la app
 app = Dash(external_stylesheets=[dbc.themes.DARKLY])
@@ -39,35 +40,91 @@ app.layout = html.Div(children=[
             'marginBottom': '20px'
         }
     ),
-    # carousel(),
-    # html.Div(
-        # children=[card('Hello everybody')],
-        # className='p-3',
-    # ),
     html.Div(
         children=[
             dcc.Graph(
                 id='example-graph',
-                figure=figura(),
+                figure=scatter_plot_1(),
                 style={
                     'height': '400px',
-                    'width': '45%'
+                    'width': '45%',
+                    'border': '2px solid white',
+                    'borderRadius': '10px',
+                    'boxShadow': '0px 4px 10px 0px rgba(255,255,255,0.3)'
+
                 }            
             ),
             dcc.Graph(
                 id='example-graph2',
-                figure=figura(),
+                figure=scatter_plot_2(),
                 style={
                     'height': '400px',
-                    'width': '45%'
+                    'width': '45%',
+                    'border': '2px solid white',
+                    'borderRadius': '10px',
+                    'boxShadow': '0px 4px 10px 0px rgba(255,255,255,0.3)'
                 }
             ),
         ],
         style={
             'width': '100%', 
             'display':'flex',
-            'justify-content':'space-around',
+            'justifyContent':'space-around',
         },
+    ),
+    html.Div(
+        children=[
+            dcc.Graph(
+                id='bar-plot_1',
+                figure=bar_plot_1(),
+                style={
+                    'height': '400px',
+                    'width': '45%',
+                    'border': '2px solid white',
+                    'borderRadius': '10px',
+                    'boxShadow': '0px 4px 10px 0px rgba(255,255,255,0.3)'
+
+                }            
+            ),
+            dcc.Graph(
+                id='bar-plot_3',
+                figure=bar_plot_3(),
+                style={
+                    'height': '400px',
+                    'width': '45%',
+                    'border': '2px solid white',
+                    'borderRadius': '10px',
+                    'boxShadow': '0px 4px 10px 0px rgba(255,255,255,0.3)'
+
+                }            
+            ),
+        ],
+        style={
+            'background': 'red',
+            'height': 'auto',
+            'width': '100%',
+            'marginTop': '50px',    
+            'display':'flex',
+            'justifyContent':'space-around',
+        }
+    ),
+    html.Div(
+        children=[
+            dcc.Graph(
+                id='bar-plot_2',
+                figure=bar_plot_2(),
+                style={
+                    'height': '400px',
+                    'width': '80%',
+                    'border': '2px solid white',
+                    'borderRadius': '10px',
+                    'boxShadow': '0px 4px 10px 0px rgba(255,255,255,0.3)',
+                    'display':'flex',
+                    'margin':'50px auto',
+
+                }            
+            ),
+        ]
     )
 ])
 
